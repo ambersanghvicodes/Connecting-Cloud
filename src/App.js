@@ -94,7 +94,7 @@ import AgencyLandingPage from "demos/AgencyLandingPage.js";
 /* Inner Pages */
 // import LoginPage from "pages/Login.js";
 // import SignupPage from "pages/Signup.js";
-import PricingPage from "pages/Pricing.js";
+// import PricingPage from "pages/Pricing.js";
 // import AboutUsPage from "pages/AboutUs.js";
 // import ContactUsPage from "pages/ContactUs.js";
 // import BlogIndexPage from "pages/BlogIndex.js";
@@ -115,19 +115,19 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/components/:type/:subtype/:name">
+        {/* <Route exact path="/components/:type/:subtype/:name">
           <ComponentRenderer />
         </Route>
         <Route exact path="/components/:type/:name">
           <ComponentRenderer />
-        </Route>
+        </Route> */}
         <Route exact path="/">
           <AgencyLandingPage />
         </Route>
         <Route exact path="/aboutus" component={AboutUs} />
         <Route exact path="/contactus" component={ContactUs} />
-        <Route exact path="/main" component={MainLandingPage} />
-        <Route exact path="/pricing" component={PricingPage} />
+        {/* <Route exact path="/main" component={MainLandingPage} /> */}
+        {/* <Route exact path="/pricing" component={PricingPage} /> */}
       </Switch>
     </Router>
   );

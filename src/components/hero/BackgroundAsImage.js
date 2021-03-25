@@ -69,7 +69,7 @@ export default () => {
       <NavLink href="/aboutus">About</NavLink>
       {/* <NavLink href="#">SAP SERVICES</NavLink> */}
       {/* <NavLink href="#">Locations</NavLink> */}
-      <NavLink href="/pricing">Pricing</NavLink>
+      {/* <NavLink href="/pricing">Pricing</NavLink> */}
       <NavLink href="/contactus">Contact Us</NavLink>
     </NavLinks>,
     // <NavLinks key={2}>

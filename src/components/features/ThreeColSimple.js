@@ -79,27 +79,6 @@ export default ({
         "Make generating recurring and usage-based billing data easy to understand, monitor and analyse.",
       url: "https://reddit.com",
     },
-    {
-      imageSrc: Growth,
-      title: "CRM",
-      description:
-        "Build healthy pipeline, increase sales productivity and improve your customers' buying experience.",
-      url: "https://timerse.com",
-    },
-    {
-      imageSrc: Customer,
-      title: "CPQ",
-      description:
-        "Manage high volumes of complex quotes quickly, accurately and simply across your business.",
-      url: "https://google.com",
-    },
-    {
-      imageSrc: Billing,
-      title: "Billing",
-      description:
-        "Make generating recurring and usage-based billing data easy to understand, monitor and analyse.",
-      url: "https://reddit.com",
-    },
   ],
   linkText = "Learn More",
   heading = "Quote-to-Cash Solution Portfolio",
