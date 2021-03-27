@@ -121,6 +121,7 @@ export default function App() {
         <Route exact path="/components/:type/:name">
           <ComponentRenderer />
         </Route> */}
+        <p>x'jskadjkskdj'</p>
         <Route exact path="/">
           <AgencyLandingPage />
         </Route>
