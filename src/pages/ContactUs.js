@@ -5,19 +5,20 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import Header from "components/headers/light.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
 import {ContactUsForm} from "components/forms/TwoColContactUsWithIllustrationFullForm.js";
-import ContactDetails from "components/cards/ThreeColContactDetails.js";
+// import ContactDetails from "components/cards/ThreeColContactDetails.js";
 
 export default class ContactUs extends Component {
   render() {
-    const Address = tw.span`leading-relaxed`;
-    const AddressLine = tw.span`block`;
-    const Email = tw.span`text-sm mt-6 block text-gray-500`;
-    const Phone = tw.span`text-sm mt-0 block text-gray-500`;
+    document.title = "Connecting Cloud | Contact Us"
+    // const Address = tw.span`leading-relaxed`;
+    // const AddressLine = tw.span`block`;
+    // const Email = tw.span`text-sm mt-6 block text-gray-500`;
+    // const Phone = tw.span`text-sm mt-0 block text-gray-500`;
     return (
       <AnimationRevealPage>
         <Header />
         <ContactUsForm />
-        <ContactDetails
+        {/* <ContactDetails
           cards={[
             {
               title: "New York",
@@ -98,7 +99,7 @@ export default class ContactUs extends Component {
               ),
             },
           ]}
-        />
+        /> */}
         <Footer />
       </AnimationRevealPage>
     );

@@ -63,24 +63,24 @@ export default ({
       title: "CRM",
       description:
         "Build healthy pipeline, increase sales productivity and improve your customers' buying experience.",
-      url: "https://timerse.com",
+      url: "/",
     },
     {
       imageSrc: Customer,
       title: "CPQ",
       description:
         "Manage high volumes of complex quotes quickly, accurately and simply across your business.",
-      url: "https://google.com",
+      url: "",
     },
     {
       imageSrc: Billing,
       title: "Billing",
       description:
         "Make generating recurring and usage-based billing data easy to understand, monitor and analyse.",
-      url: "https://reddit.com",
+      url: "/",
     },
   ],
-  linkText = "Learn More",
+  linkText = "",
   heading = "Quote-to-Cash Solution Portfolio",
   subheading = "Services",
   description = "",

@@ -42,7 +42,7 @@ export var ContactUsForm = ({
       <wbr /> with us.
     </>
   ),
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description = "Enter details below. Our Team will contact you soon.",
   submitButtonText = "Send",
   formAction = "#",
   formMethod = "get",

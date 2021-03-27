@@ -49,13 +49,13 @@ export default function Footer() {
             </span>
           </p>
           <SocialLinksContainer>
-            <SocialLink href="https://facebook.com">
+            {/* <SocialLink href="https://facebook.com">
               <FacebookIcon />
             </SocialLink>
             <SocialLink href="https://twitter.com">
               <TwitterIcon />
-            </SocialLink>
-            <SocialLink href="https://www.linkedin.com/company/connectingcloud/">
+            </SocialLink> */}
+            <SocialLink  target='blank' href="https://www.linkedin.com/company/connectingcloud/">
               <LinkedInIcon />
             </SocialLink>
           </SocialLinksContainer>
