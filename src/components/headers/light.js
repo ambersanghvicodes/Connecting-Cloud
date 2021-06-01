@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import { Link } from "react-router-dom";
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
@@ -37,7 +38,7 @@ export const LogoLink = styled(NavLink)`
   ${tw`flex items-center  text-black font-black border-b-0 text-2xl! ml-0!`};
 
   img {
-    ${tw`w-16 mr-3`}
+    ${tw`w-24 mr-3`}
   }
 `;
 
@@ -56,7 +57,13 @@ export const DesktopNavLinks = tw.nav`
   hidden lg:flex flex-1 justify-between items-center
 `;
 
-export default ({ roundedHeaderButton = false, logoLink, links, className, collapseBreakpointClass = "lg" }) => {
+export default ({ // eslint-disable-line
+  roundedHeaderButton = false,
+  logoLink,
+  links,
+  className,
+  collapseBreakpointClass = "lg",
+}) => {
   /*
    * This header component accepts an optionals "links" prop that specifies the links to render in the navbar.
    * This links props should be an array of "NavLinks" components which is exported from this file.
@@ -70,10 +77,18 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
    * changing the defaultLinks variable below below.
    * If you manipulate links here, all the styling on the links is already done for you. If you pass links yourself though, you are responsible for styling the links or use the helper styled components that are defined here (NavLink)
    */
-  const defaultLinks = [
+  
+  const defaultLinks = [ 
     <NavLinks key={1}>
-      <NavLink href="/aboutus">About</NavLink>
-      <NavLink href="/contactus">Contact Us</NavLink>
+      <Link to='/aboutus'>
+        <NavLink>About</NavLink>
+      </Link>
+      <Link to='/contactus' >
+        <NavLink>Contact Us</NavLink>
+      </Link>
+      <Link to='/scripts' >
+        <NavLink>Scripts</NavLink>
+      </Link>
       {/* <NavLink href="/#" tw="lg:ml-12!">
         Login
       </NavLink> */}
@@ -101,13 +116,26 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
         {links}
       </DesktopNavLinks>
 
-      <MobileNavLinksContainer css={collapseBreakpointCss.mobileNavLinksContainer}>
+      <MobileNavLinksContainer
+        css={collapseBreakpointCss.mobileNavLinksContainer}
+      >
         {logoLink}
-        <MobileNavLinks initial={{ x: "150%", display: "none" }} animate={animation} css={collapseBreakpointCss.mobileNavLinks}>
+        <MobileNavLinks
+          initial={{ x: "150%", display: "none" }}
+          animate={animation}
+          css={collapseBreakpointCss.mobileNavLinks}
+        >
           {links}
         </MobileNavLinks>
-        <NavToggle onClick={toggleNavbar} className={showNavLinks ? "open" : "closed"}>
-          {showNavLinks ? <CloseIcon tw="w-6 h-6" /> : <MenuIcon tw="w-6 h-6" />}
+        <NavToggle
+          onClick={toggleNavbar}
+          className={showNavLinks ? "open" : "closed"}
+        >
+          {showNavLinks ? (
+            <CloseIcon tw="w-6 h-6" />
+          ) : (
+            <MenuIcon tw="w-6 h-6" />
+          )}
         </NavToggle>
       </MobileNavLinksContainer>
     </Header>

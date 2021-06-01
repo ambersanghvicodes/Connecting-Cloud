@@ -35,17 +35,17 @@ export default function Footer() {
         <Row>
           <LogoContainer>
             <LogoImg src={logo} />
-            <LogoText>Connecting Cloud Consultancy</LogoText>
+            <LogoText>Connecting Cloud</LogoText>
           </LogoContainer>
           <LinksContainer>
             <Link href="/">Home</Link>
             <Link href="/aboutus">About</Link>
             <Link href="/contactus">Contact Us</Link>
           </LinksContainer>
-          <p style={{ paddingTop: "20px" }}>
+          <p style={{ paddingTop: "20px", textAlign : 'center' }}>
             Mail us at{" "}
             <span style={{ fontWeight: "bold" }}>
-              connectingcloudconsultant@gmail.com
+              connectingcloudconsulting@outlook.com
             </span>
           </p>
           <SocialLinksContainer>

@@ -3,7 +3,6 @@ import tw from "twin.macro";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import Lottie from "react-lottie";
 import Header, {
   NavLink,
   NavLinks,
@@ -64,14 +63,21 @@ const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm
 //   }
 // `;
 
-export default () => { //eslint-disable-line
+export default () => {  //eslint-disable-line
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="/aboutus">About</NavLink>
+      <Link to="/aboutus">
+        <NavLink>About</NavLink>
+      </Link>
       {/* <NavLink href="#">SAP SERVICES</NavLink> */}
       {/* <NavLink href="#">Locations</NavLink> */}
       {/* <NavLink href="/pricing">Pricing</NavLink> */}
-      <NavLink href="/contactus">Contact Us</NavLink>
+      <Link to="/contactus">
+        <NavLink>Contact Us</NavLink>
+      </Link>
+      <Link to="/scripts">
+        <NavLink>Scripts</NavLink>
+      </Link>
     </NavLinks>,
     // <NavLinks key={2}>
     //   <PrimaryLink href="/#">Hire Us</PrimaryLink>
@@ -89,7 +95,9 @@ export default () => { //eslint-disable-line
               We have now launched operations in Europe.
             </Notification> */}
             <Heading>
-              <SlantedBackground>EMPOWER YOUR SALES.</SlantedBackground>
+              <SlantedBackground>
+                <span style={{ color: "#0000fe" }}>EMPOWER YOUR SALES.</span>
+              </SlantedBackground>
               <br />
               <span
                 style={{
