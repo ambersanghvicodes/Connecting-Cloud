@@ -64,7 +64,7 @@ export default class BlogDetail extends Component {
             <div className="blog-container">
               <p
                 dangerouslySetInnerHTML={{ __html: blog.description }}
-                style={{ color: "black", textAlign: "center" }}
+                style={{ color: "black" }}
                 className="nd-para"
               />
             </div>

@@ -5,6 +5,7 @@ import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import styled from "styled-components";
 import "../styles/table.css";
 import Hero from "components/hero/BackgroundAsImage.js";
+import LandingPageHero from 'components/hero/LandingPageHero.js'
 // import Features from "components/features/DashedBorderSixFeatures";
 import MainFeature from "components/features/ThreeColSimple.js";
 // import MainFeature2 from "components/features/TwoColWithTwoFeaturesAndButtons.js";

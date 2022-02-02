@@ -130,14 +130,13 @@ export default ({
                     className="thumb"
                     style={{
                       backgroundImage:
-                        "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-1.jpg)",
+                        `url(${post.image})`,
                     }}
                   ></div>
                   <article>
-                    <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+                    <h1 style={{fontWeight : 'bold'}}  dangerouslySetInnerHTML={{ __html: post.title }} />
                     <span>{post.author}</span>
-                    <span className="tags">{post.tags}</span>
-                    <span className="date">{post.date_time}</span>
+                    <span className="date">{post.date_time.split('T')[0]}</span>
                   </article>
                 </a>
               </div>

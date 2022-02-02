@@ -52,6 +52,7 @@ export default class GPScripts extends Component {
         })
         .catch((err) => {
           this.setState({ isError: true, errorMsg: err });
+          console.log('err',err)
           this.setLoading(false);
         });
     } else if (action_type === "global_scripts") {
@@ -135,6 +136,7 @@ export default class GPScripts extends Component {
         this.setState({
           token: res.data.access_token,
         });
+        console.log(res)
         if (action_type === "custom_actions") {
           url1 = "https://" + url + "/api/script/v1/customactions?$top=100";
           this.setCustom(url1);

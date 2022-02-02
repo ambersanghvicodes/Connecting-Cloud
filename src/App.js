@@ -1,10 +1,12 @@
 import "tailwindcss/dist/base.css";
 import "styles/globalStyles.css";
+
 import React from "react";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AgencyLandingPage from "demos/AgencyLandingPage.js";
+import CCLandingPage from "demos/CCLandingPage";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "pages/AboutUs";
 import HomePage from "pages/HomePage";
@@ -18,7 +20,8 @@ export default function App() {
       <Switch>
         <Route exact path="/">
           {/* <HomePage /> */}
-          <AgencyLandingPage />
+          {/* <AgencyLandingPage /> */}
+          <CCLandingPage />
         </Route>
         <Route exact path="/aboutus" component={AboutUs} />
         <Route exact path="/contactus" component={ContactUs} />

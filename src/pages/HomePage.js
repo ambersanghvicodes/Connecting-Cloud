@@ -130,6 +130,9 @@ export default function HomePage({
 }) {
   const navLinks = [
     <NavLinks key={1}>
+      <Link to="/blogs">
+        <NavLink>Blogs</NavLink>
+      </Link>
       <Link to="/aboutus">
         <NavLink>About</NavLink>
       </Link>
@@ -138,9 +141,6 @@ export default function HomePage({
       {/* <NavLink href="/pricing">Pricing</NavLink> */}
       <Link to="/contactus">
         <NavLink>Contact Us</NavLink>
-      </Link>
-      <Link to="/blogs">
-        <NavLink>Blogs</NavLink>
       </Link>
       <Link to="/sapscripts">
         <NavLink>Script Workbench</NavLink>

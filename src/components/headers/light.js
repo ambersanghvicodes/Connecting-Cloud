@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -6,7 +6,8 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { Link } from "react-router-dom";
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
-
+import Dropdown from "components/Navbar/Dropdown.js";
+import "../Navbar/Navbar.css";
 import logo from "../../logo/logo.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
@@ -56,8 +57,8 @@ export const MobileNavLinks = motion.custom(styled.div`
 export const DesktopNavLinks = tw.nav`
   hidden lg:flex flex-1 justify-between items-center
 `;
-
-export default ({ // eslint-disable-line
+//eslint-disable-next-line
+export default ({
   roundedHeaderButton = false,
   logoLink,
   links,
@@ -77,31 +78,67 @@ export default ({ // eslint-disable-line
    * changing the defaultLinks variable below below.
    * If you manipulate links here, all the styling on the links is already done for you. If you pass links yourself though, you are responsible for styling the links or use the helper styled components that are defined here (NavLink)
    */
-  
-  const defaultLinks = [ 
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+  const defaultLinks = [
     <NavLinks key={1}>
-      <Link to='/aboutus'>
+      <Link to="/blogs">
+        <NavLink>Blogs</NavLink>
+      </Link>
+      <Link to="/aboutus">
         <NavLink>About</NavLink>
       </Link>
-      <Link to='/contactus' >
+      <Link to="/services">
+        <NavLink onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+          <Link to="/services" className="" onClick={closeMobileMenu}>
+            Services <i className="fas fa-caret-down" />
+          </Link>
+          {dropdown && <Dropdown />}
+        </NavLink>
+      </Link>
+      <Link to="/contactus">
         <NavLink>Contact Us</NavLink>
       </Link>
-      <Link to='/scripts' >
+      <Link to="/scripts">
         <NavLink>Scripts</NavLink>
       </Link>
       {/* <NavLink href="/#" tw="lg:ml-12!">
         Login
       </NavLink> */}
       {/* <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/#">Sign Up</PrimaryLink> */}
-    </NavLinks>
+    </NavLinks>,
   ];
 
   const { showNavLinks, animation, toggleNavbar } = useAnimatedNavToggler();
-  const collapseBreakpointCss = collapseBreakPointCssMap[collapseBreakpointClass];
+  const collapseBreakpointCss =
+    collapseBreakPointCssMap[collapseBreakpointClass];
 
   const defaultLogoLink = (
     <LogoLink href="/">
-      <img src={logo} alt="Connecting Cloud Logo" />
+      <img
+        style={{ filter: "drop-shadow(0 0 0.4rem white)" }}
+        src={logo}
+        alt="Connecting Cloud Logo"
+      />
       Connecting Cloud
     </LogoLink>
   );
@@ -152,21 +189,21 @@ const collapseBreakPointCssMap = {
   sm: {
     mobileNavLinks: tw`sm:hidden`,
     desktopNavLinks: tw`sm:flex`,
-    mobileNavLinksContainer: tw`sm:hidden`
+    mobileNavLinksContainer: tw`sm:hidden`,
   },
   md: {
     mobileNavLinks: tw`md:hidden`,
     desktopNavLinks: tw`md:flex`,
-    mobileNavLinksContainer: tw`md:hidden`
+    mobileNavLinksContainer: tw`md:hidden`,
   },
   lg: {
     mobileNavLinks: tw`lg:hidden`,
     desktopNavLinks: tw`lg:flex`,
-    mobileNavLinksContainer: tw`lg:hidden`
+    mobileNavLinksContainer: tw`lg:hidden`,
   },
   xl: {
     mobileNavLinks: tw`lg:hidden`,
     desktopNavLinks: tw`lg:flex`,
-    mobileNavLinksContainer: tw`lg:hidden`
-  }
+    mobileNavLinksContainer: tw`lg:hidden`,
+  },
 };

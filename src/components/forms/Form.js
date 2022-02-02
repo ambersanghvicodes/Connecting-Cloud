@@ -26,12 +26,15 @@ export default class Form extends Component {
   };
   onSubmit = (e) => {
     e.preventDefault();
+    const date = new Date()
+
     db.collection("contants")
       .add({
         name: this.state.name,
         email: this.state.email,
         message: this.state.message,
         subject: this.state.subject,
+        date : date
       })
       .then(() => {
         alert("Message submitted Successfully. Will get in Touch Soon.");
