@@ -139,7 +139,7 @@ export default ({
         src={logo}
         alt="Connecting Cloud Logo"
       />
-      Connecting Cloud
+      Connecting Cloud Technologies
     </LogoLink>
   );
 

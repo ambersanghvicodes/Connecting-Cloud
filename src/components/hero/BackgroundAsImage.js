@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import BackdropFilter from "react-backdrop-filter";
-import Dropdown from '../Navbar/Dropdown'
-import '../Navbar/Navbar.css'
+import Dropdown from "../Navbar/Dropdown";
+import "../Navbar/Navbar.css";
 import Header, {
   NavLink,
   NavLinks,
@@ -17,65 +17,66 @@ import Header, {
 import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
 import BG1 from "../../images/bg/bg-i.jpg";
 import BG2 from "../../images/bg/hero-bg.jpg";
+import BG3 from "../../images/bg/hero-bg-1.jpg";
 import "../../styles/bas.css";
 // import BackgroundImage from "../../images/background2.jpg";
 // import growthData from "../../Animations/growth.json";
 import Navbar from "./../Navbar/Navbar";
 
-const StyledHeader = styled(Header)`
-  ${tw`pt-8 max-w-none`}
-  ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
-    ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
-  }
-  ${NavToggle}.closed {
-    ${tw`text-gray-100 hover:text-primary-500`}
-  }
-`;
-const Container = styled.div`
-  ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
-  background-image: url(${BG1});
-`;
-// https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80
-const HeroBG = styled.div`
-  ${tw`absolute z-0 -mx-8 -mt-8 bg-center bg-cover opacity-50`}
-  background-image: url(${BG2});
-`;
-
-const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-gray-700 opacity-50`;
-
-const HeroContainer = tw.div`z-20 relative px-4 sm:px-8 max-w-screen-xl mx-auto`;
-const HeroContainer1 = tw.div`z-20 relative pt-8`;
-const TwoColumn = tw.div`pt-24 pb-32 px-4 flex justify-between items-center flex-col lg:flex-row`;
-const LeftColumn = tw.div`flex w-full   items-center block`;
-// const RightColumn = tw.div`w-full sm:w-5/6 lg:w-1/2 mt-16 lg:mt-0 lg:pl-8`;
-
-const Heading = styled.h1`
-  ${tw`text-4xl text-center lg:text-left sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-100 leading-none`}
-  span {
-    ${tw`inline-block  mt-2`}
-  }
-`;
-const Heading1 = styled.h1`
-  ${tw`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-100 leading-snug -mt-56 pt-4 sm:mt-0`}
-  span {
-    ${tw`inline-block mt-2`}
-  }
-`;
-
-const SlantedBackground = styled.span`
-  ${tw`relative text-primary-500 px-4 -mx-4 py-2`}
-  &::before {
-    content: "";
-    ${tw`absolute inset-0 bg-gray-100 transform blur-xl -skew-x-12 -z-10`}
-  }
-`;
-
-// const Notification = tw.span`inline-block my-4 pl-3 py-1 text-gray-100 border-l-4 border-blue-500 font-medium text-sm`;
-
-const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
-
 // eslint-disable-next-line
-export default () => {
+export default (props) => {
+  const StyledHeader = styled(Header)`
+    ${tw`pt-8 max-w-none`}
+    ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
+      ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
+    }
+    ${NavToggle}.closed {
+      ${tw`text-gray-100 hover:text-primary-500`}
+    }
+  `;
+  const Container = styled.div`
+    ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
+    background-image: url(${BG1});
+  `;
+  // https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80
+  // const HeroBG = styled.div`
+  //   ${tw`absolute z-0 -mx-8 -mt-8 bg-center bg-cover opacity-50`}
+  //   background-image: url("../../images/bg/hero-bg.jpg");
+  // `;
+
+  const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-black opacity-50`;
+
+  const HeroContainer = tw.div`z-20 relative px-4 sm:px-8 max-w-screen-xl mx-auto`;
+  const HeroContainer1 = tw.div`z-20 relative pt-8`;
+  const TwoColumn = tw.div`pt-24 pb-32 px-4 flex justify-between items-center flex-col lg:flex-row`;
+  const LeftColumn = tw.div`flex w-full   items-center block`;
+  // const RightColumn = tw.div`w-full sm:w-5/6 lg:w-1/2 mt-16 lg:mt-0 lg:pl-8`;
+
+  const Heading = styled.h1`
+    ${tw`text-4xl text-center lg:text-left sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-100 leading-none`}
+    span {
+      ${tw`inline-block  mt-2`}
+    }
+  `;
+  const Heading1 = styled.h1`
+    ${tw`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-100 leading-snug -mt-56 pt-4 sm:mt-0`}
+    span {
+      ${tw`inline-block mt-2`}
+    }
+  `;
+
+  const SlantedBackground = styled.span`
+    ${tw`relative text-primary-500 px-4 -mx-4 py-2`}
+    &::before {
+      content: "";
+      ${tw`absolute inset-0 bg-gray-100 transform blur-xl -skew-x-12 -z-10`}
+    }
+  `;
+
+  // const Notification = tw.span`inline-block my-4 pl-3 py-1 text-gray-100 border-l-4 border-blue-500 font-medium text-sm`;
+
+  const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
+
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
@@ -132,17 +133,17 @@ export default () => {
     <Container>
       <OpacityOverlay />
 
-      <img
+      {/* <img
         className="ti1"
         src={BG2}
         alt={"feature"}
         style={{
           position: "absolute",
-          height: "120vh",
-          opacity: "0.85",
+          height: "100%",
+          opacity: "0.75",
           transform: "rotate(180deg)",
         }}
-      />
+      /> */}
       {/* <HeroContainer1>
         <Navbar />
       </HeroContainer1> */}
@@ -162,17 +163,12 @@ export default () => {
             >
               <button
                 style={{
-                  // borderRadius: "4px",
-                  // background: "black",
                   color: "white",
                   fontWeight: "bold",
                   textAlign: "center",
-                  // width: "70vh",
-                  // height: "8vh",
-                  // backdropFilter: "blur(5px)",
                 }}
               >
-                WELCOME TO{" "}
+                {props.subheading}{" "}
                 <span
                   style={{
                     color: "royalblue",
@@ -180,11 +176,11 @@ export default () => {
                     fontWeight: "bolder",
                   }}
                 >
-                  CONNECTING CLOUD TECHNOLOGIES
+                  {props.subheading1}
                 </span>
               </button>
             </BackdropFilter>
-            <Heading1>Consulting for Every Business</Heading1>
+            <Heading1 style={{color : '#fff6f5'}}>{props.heading}</Heading1>
             {/* <Heading>
               <SlantedBackground>
                 <span style={{ color: "#0000fe" }}>EMPOWER YOUR SALES.</span>
@@ -206,7 +202,7 @@ export default () => {
             </Heading> */}
             <Link to="contactus">
               <PrimaryAction>
-                DISCOVER MORE{" "}
+                {props.buttonText}{" "}
                 {/* <span role="img" aria-label="contact">
                   ☎️
                 </span> */}

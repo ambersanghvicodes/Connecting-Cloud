@@ -35,7 +35,7 @@ export default function Footer() {
         <Row>
           <LogoContainer>
             <LogoImg src={logo} />
-            <LogoText>Connecting Cloud</LogoText>
+            <LogoText>Connecting Cloud Technologies</LogoText>
           </LogoContainer>
           <LinksContainer>
             <Link href="/">Home</Link>
@@ -45,7 +45,7 @@ export default function Footer() {
           <p style={{ paddingTop: "20px", textAlign : 'center' }}>
             Mail us at{" "}
             <span style={{ fontWeight: "bold" }}>
-              connectingcloudconsulting@outlook.com
+              info@connectingcloud.co
             </span>
           </p>
           <SocialLinksContainer>
@@ -60,7 +60,7 @@ export default function Footer() {
             </SocialLink>
           </SocialLinksContainer>
           <CopyrightText>
-            &copy; Copyright 2021, Connect Cloud Consultancy Inc. All Rights
+            &copy; Copyright 2021, Connect Cloud Technologies Inc. All Rights
             Reserved.
           </CopyrightText>
         </Row>

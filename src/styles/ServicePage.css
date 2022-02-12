@@ -1,0 +1,41 @@
+.spg-container {
+    position: relative;
+    background: center cover no-repeat !important;
+}
+
+.spg-inner {
+    position: relative;
+    height: 130vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.spg-inner-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 130vh;
+    justify-content: space-evenly;
+}
+.spg-head {
+    color: white;
+    font: white bolder;
+    font-size: 4rem;
+    margin: 0vh;
+}
+.spg-img {
+    max-width: 30vw;
+    width: auto;
+    height: auto;
+    /* padding-top: 50%; */
+    /* width: ; */
+}
+.spg-img-sap {
+    max-width: 20vw;
+    width: auto;
+    height: auto;
+    /* padding-top: 50%; */
+    /* width: ; */
+}
+

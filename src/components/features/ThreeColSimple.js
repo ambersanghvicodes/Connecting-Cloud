@@ -12,9 +12,12 @@ import { ReactComponent as ArrowRightIcon } from "images/arrow-right-icon.svg";
 // import SupportIconImage from "images/support-icon.svg";
 // import ShieldIconImage from "images/shield-icon.svg";
 // import CustomizeIconImage from "images/customize-icon.svg";
-import Growth from "images/growth.png";
-import Customer from "images/customer.png";
-import Billing from "images/billing.png";
+// import Growth from "images/growth.png";
+// import Customer from "images/customer.png";
+// import Billing from "images/billing.png";
+import Salesforce from "images/logo/salesforce.png";
+import SAP from "images/logo/sap.png";
+import OT from "images/logo/ot.png";
 import { ReactComponent as SvgDecoratorBlob3 } from "images/svg-decorator-blob-3.svg";
 
 const Heading = tw(SectionHeading)``;
@@ -24,15 +27,15 @@ const ThreeColumnContainer = styled.div`
   ${tw`mt-10 flex flex-col items-center lg:items-stretch lg:flex-row flex-wrap lg:justify-center max-w-screen-lg mx-auto`}
 `;
 const Column = styled.div`
-  ${tw`lg:w-1/3 max-w-xs`}
+  ${tw`lg:w-1/3 max-w-xs 		`}
 `;
 
 const Card = styled.a`
-  ${tw`flex flex-col items-center text-center h-full mx-4 px-4 py-8 rounded transition-transform duration-300 hover:cursor-pointer transform hover:scale-105 `}
+  ${tw`flex flex-col items-center text-center h-72 mx-4 px-4 py-8 rounded transition-transform duration-300 hover:cursor-pointer transform hover:scale-105 `}
   .imageContainer {
     ${tw`text-center rounded-full p-4 bg-gray-100`}
     img {
-      ${tw`w-12  h-12`}
+      ${tw`  h-12`}
     }
   }
 
@@ -59,22 +62,22 @@ const DecoratorBlob = styled(SvgDecoratorBlob3)`
 export default ({ //eslint-disable-line
   cards = [
     {
-      imageSrc: Growth,
-      title: "CRM",
+      imageSrc: Salesforce,
+      title: "Salesforce",
       description:
         "Build healthy pipeline, increase sales productivity and improve your customers' buying experience.",
       url: "/",
     },
     {
-      imageSrc: Customer,
-      title: "CPQ",
+      imageSrc: SAP,
+      title: "SAP",
       description:
         "Manage high volumes of complex quotes quickly, accurately and simply across your business.",
       url: "",
     },
     {
-      imageSrc: Billing,
-      title: "Billing",
+      imageSrc: OT,
+      title: "Other Technologies",
       description:
         "Make generating recurring and usage-based billing data easy to understand, monitor and analyse.",
       url: "/",
@@ -95,7 +98,7 @@ export default ({ //eslint-disable-line
    *  4) url - the url that the card should goto on click
    */
   return (
-    <Container>
+    <Container >
       <ContentWithPaddingXl>
         {subheading && <Subheading>{subheading}</Subheading>}
         {heading && <Heading>{heading}</Heading>}

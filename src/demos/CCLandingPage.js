@@ -25,17 +25,23 @@ const DecoratorBlob = styled(SvgDecoratorBlob3)`
 export default class CCLandingPage extends Component {
   render() {
     return (
-      <div style={{width : '100vw', overflow : 'hidden'}}>
+      <div style={{ width: "100vw", overflow: "hidden" }}>
         <div
           style={{
             position: "relative",
             backgroundColor: "#1e7cd9",
             height: "100vh",
-            width :'100vw',
+            width: "100vw",
             overflow: "hidden",
           }}
         >
-          <Hero />
+          <Hero
+            subheading="Welcome to"
+            subheading1="CONNECTING CLOUD TECHNOLOGIES"
+            heading="Consulting for Every Business"
+            buttonText="DISCOVER MORE"
+            bgImgURL="../../images/bg/hero-bg.jpg"
+          />
           {/* <div class="custom-shape-divider-bottom-1642574667">
             <svg
               data-name="Layer 1"
