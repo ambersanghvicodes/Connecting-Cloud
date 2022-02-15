@@ -48,7 +48,7 @@ export default function Footer() {
               info@connectingcloud.co
             </span>
           </p>
-          <SocialLinksContainer>
+          <SocialLinksContainer className="social-links">
             {/* <SocialLink href="https://facebook.com">
               <FacebookIcon />
             </SocialLink>
@@ -60,7 +60,7 @@ export default function Footer() {
             </SocialLink>
           </SocialLinksContainer>
           <CopyrightText>
-            &copy; Copyright 2021, Connect Cloud Technologies Inc. All Rights
+            &copy; Copyright 2021, Connecting Cloud Technologies Private Limited. All Rights
             Reserved.
           </CopyrightText>
         </Row>

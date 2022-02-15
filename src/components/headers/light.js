@@ -109,7 +109,7 @@ export default ({
       </Link>
       <Link to="/services">
         <NavLink onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-          <Link to="/services" className="" onClick={closeMobileMenu}>
+          <Link to="/" className="" onClick={closeMobileMenu}>
             Services <i className="fas fa-caret-down" />
           </Link>
           {dropdown && <Dropdown />}
@@ -118,9 +118,9 @@ export default ({
       <Link to="/contactus">
         <NavLink>Contact Us</NavLink>
       </Link>
-      <Link to="/scripts">
+      {/* <Link to="/scripts">
         <NavLink>Scripts</NavLink>
-      </Link>
+      </Link> */}
       {/* <NavLink href="/#" tw="lg:ml-12!">
         Login
       </NavLink> */}

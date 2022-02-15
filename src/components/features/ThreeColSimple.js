@@ -24,7 +24,7 @@ const Heading = tw(SectionHeading)``;
 const Subheading = tw(SubheadingBase)`text-center mb-3`;
 const Description = tw(SectionDescription)`text-center mx-auto`;
 const ThreeColumnContainer = styled.div`
-  ${tw`mt-10 flex flex-col items-center lg:items-stretch lg:flex-row flex-wrap lg:justify-center max-w-screen-lg mx-auto`}
+  ${tw`mb-10 mt-8 flex flex-col items-center lg:items-stretch lg:flex-row flex-wrap lg:justify-center max-w-screen-lg mx-auto`}
 `;
 const Column = styled.div`
   ${tw`lg:w-1/3 max-w-xs 		`}
@@ -35,7 +35,7 @@ const Card = styled.a`
   .imageContainer {
     ${tw`text-center rounded-full p-4 bg-gray-100`}
     img {
-      ${tw`  h-12`}
+      ${tw`  h-20`}
     }
   }
 
@@ -84,7 +84,7 @@ export default ({ //eslint-disable-line
     },
   ],
   linkText = "",
-  heading = "Quote-to-Cash Solution Portfolio",
+  heading = "Prominent Packaged Solutions",
   subheading = "Services",
   description = "",
   imageContainerCss = null,

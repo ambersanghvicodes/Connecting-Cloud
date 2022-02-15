@@ -35,7 +35,7 @@ export default (props) => {
     }
   `;
   const Container = styled.div`
-    ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
+    ${tw`relative  bg-center bg-cover h-full`}
     background-image: url(${BG1});
   `;
   // https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80
@@ -46,7 +46,7 @@ export default (props) => {
 
   const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-black opacity-50`;
 
-  const HeroContainer = tw.div`z-20 relative px-4 sm:px-8 max-w-screen-xl mx-auto`;
+  const HeroContainer = tw.div`z-20 relative max-w-screen-xl mx-auto`;
   const HeroContainer1 = tw.div`z-20 relative pt-8`;
   const TwoColumn = tw.div`pt-24 pb-32 px-4 flex justify-between items-center flex-col lg:flex-row`;
   const LeftColumn = tw.div`flex w-full   items-center block`;
@@ -75,7 +75,7 @@ export default (props) => {
 
   // const Notification = tw.span`inline-block my-4 pl-3 py-1 text-gray-100 border-l-4 border-blue-500 font-medium text-sm`;
 
-  const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
+  const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded  transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
 
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -108,7 +108,7 @@ export default (props) => {
       </Link>
       <Link to="/services">
         <NavLink onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-          <Link to="/services" className="" onClick={closeMobileMenu}>
+          <Link to="/" className="" onClick={closeMobileMenu}>
             Services <i className="fas fa-caret-down" />
           </Link>
           {dropdown && <Dropdown page="home" />}
@@ -120,9 +120,9 @@ export default (props) => {
       <Link to="/contactus">
         <NavLink>Contact Us</NavLink>
       </Link>
-      <Link to="/scripts">
+      {/* <Link to="/scripts">
         <NavLink>Scripts</NavLink>
-      </Link>
+      </Link> */}
     </NavLinks>,
     // <NavLinks key={2}>
     //   <PrimaryLink href="/#">Hire Us</PrimaryLink>
@@ -161,26 +161,14 @@ export default (props) => {
                 allowTaint: true,
               }}
             >
-              <button
-                style={{
-                  color: "white",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                }}
-              >
+              <button className="hero-blur-subheading">
                 {props.subheading}{" "}
-                <span
-                  style={{
-                    color: "royalblue",
-                    fontSize: "1.2em",
-                    fontWeight: "bolder",
-                  }}
-                >
+                <span className="hero-blur-subheading1">
                   {props.subheading1}
                 </span>
               </button>
             </BackdropFilter>
-            <Heading1 style={{color : '#fff6f5'}}>{props.heading}</Heading1>
+            <Heading1 style={{ color: "#fff6f5" }}>{props.heading}</Heading1>
             {/* <Heading>
               <SlantedBackground>
                 <span style={{ color: "#0000fe" }}>EMPOWER YOUR SALES.</span>
@@ -200,8 +188,8 @@ export default (props) => {
               </span>
               <br />
             </Heading> */}
-            <Link to="contactus">
-              <PrimaryAction>
+            <Link to="contactus" >
+              <PrimaryAction className="btn-shadow">
                 {props.buttonText}{" "}
                 {/* <span role="img" aria-label="contact">
                   ☎️

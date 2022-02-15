@@ -33,7 +33,7 @@ export default function App() {
         <Route exact path="/scripts" component={GPScripts} />
         <Route exact path="/blogs" component={BlogIndex} />
         <Route exact path="/blogs/:title" component={BlogDetail} />
-        <Route exact path="/services" component={ServicePage} />
+        {/* <Route exact path="/services" component={ServicePage} /> */}
       </Switch>
     </Router>
   );
