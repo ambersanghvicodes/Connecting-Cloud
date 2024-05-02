@@ -58,6 +58,7 @@ export default class GPScripts extends Component {
     } else if (action_type === "global_scripts") {
       API.post("api_view/get_global_scripts/", data)
         .then((res) => {
+          console.log('data1',res.data)
           this.setState({ scripts: res.data, script_type: "global_scripts" });
           this.setLoading(false);
         })
@@ -77,6 +78,7 @@ export default class GPScripts extends Component {
         })
         .catch((err) => {
           this.setState({ isError: true, errorMsg: err });
+          console.log(err)
           this.setLoading(false);
         });
     } else if (action_type === 'custom_calculation') {
@@ -101,6 +103,7 @@ export default class GPScripts extends Component {
     });
   }
   setCustom = (url1) => {
+    console.log(url1)
     let auth_headers = {
       "Content-Type": "application/json",
       Authorization: "Bearer " + this.state.token,
@@ -112,6 +115,7 @@ export default class GPScripts extends Component {
         this.getFiles(d);
       })
       .catch((err) => {
+        console.log(err.data)
         this.setState({ isError: true, errorMsg: err });
         this.setLoading(false);
       });
@@ -154,7 +158,7 @@ export default class GPScripts extends Component {
           url1 =
             "https://" +
             url +
-            "/api/script/v1/customcalculations";
+            "/api/script/v1/customcalculations?$skip=0&$top=100";
           this.setCustom(url1);
         }
       })
@@ -252,6 +256,7 @@ export default class GPScripts extends Component {
         link.click();
       })
       .catch((err) => {
+        console.log(err)
         this.setState({ isError: true, errorMsg: err });
         this.setLoading(false);
       });
